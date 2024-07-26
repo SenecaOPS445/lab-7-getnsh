@@ -43,3 +43,29 @@ def valid_time(t):
     return True
 
 
+def change_time(time, seconds):   
+    time.second += seconds
+   
+    while time.second < 0:
+        time.second += 60
+        time.minute -= 1
+
+    while time.second >= 60:
+        time.second -= 60
+        time.minute += 1
+
+    while time.minute < 0:
+        time.minute += 60
+        time.hour -= 1
+
+    while time.minute >= 60:
+        time.minute -= 60
+        time.hour += 1
+
+    while time.hour < 0:
+        time.hour += 24
+
+    while time.hour >= 24:
+        time.hour -= 24
+
+    return None
